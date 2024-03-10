@@ -9,16 +9,23 @@ import About from './components/About.jsx'
 import Navbar from './components/Navbar.jsx'
 import OrderSummary from './components/OrderSummary.jsx'
 import PageNotFound from './components/PageNotFound.jsx'
+import Products from './components/Products.jsx'
+import FeaturedProducts from './components/FeaturedProducts.jsx'
+import NewProducts from './components/NewProducts.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<App/>}>
-      <Route path='/' element={<Home/>}/>
-      <Route path='about' element={<About/>}/>
-      <Route path='order-summary' element={<OrderSummary/>}/>
-      <Route path='*' element={<PageNotFound/>}/>
+    <Route path='/' element={<App />}>
+      <Route path='/' element={<Home />} />
+      <Route path='about' element={<About />} />
+      <Route path='order-summary' element={<OrderSummary />} />
+      <Route path='products' element={<Products />}>
+        <Route path='featured' element={<FeaturedProducts/>}/>
+        <Route path='new' element={<NewProducts/>}/>
+      </Route>
+      <Route path='*' element={<PageNotFound />} />
     </Route>
-    
+
   )
 )
 
