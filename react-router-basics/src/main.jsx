@@ -8,6 +8,7 @@ import Home from './components/Home.jsx'
 import About from './components/About.jsx'
 import Navbar from './components/Navbar.jsx'
 import OrderSummary from './components/OrderSummary.jsx'
+import PageNotFound from './components/PageNotFound.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
       <Route path='/' element={<Home/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='order-summary' element={<OrderSummary/>}/>
+      <Route path='*' element={<PageNotFound/>}/>
     </Route>
     
   )
