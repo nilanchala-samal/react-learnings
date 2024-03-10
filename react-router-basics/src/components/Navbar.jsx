@@ -19,6 +19,9 @@ function Navbar() {
         <NavLink to="/products" className={({ isActive }) => `${isActive ? 'text-orange-700' : 'text-gray-700'} `}>
           Products
         </NavLink>
+        <NavLink to="/users" className={({ isActive }) => `${isActive ? 'text-orange-700' : 'text-gray-700'} `}>
+          Users
+        </NavLink>
 
       </nav>
     </div>

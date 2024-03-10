@@ -12,6 +12,9 @@ import PageNotFound from './components/PageNotFound.jsx'
 import Products from './components/Products.jsx'
 import FeaturedProducts from './components/FeaturedProducts.jsx'
 import NewProducts from './components/NewProducts.jsx'
+import Users from './components/Users.jsx'
+import UserDetails from './components/UserDetails.jsx'
+import Admin from './components/Admin.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,6 +27,12 @@ const router = createBrowserRouter(
         <Route path='featured' element={<FeaturedProducts />} />
         <Route path='new' element={<NewProducts />} />
       </Route>
+
+      <Route path='users' element={<Users />} >
+        <Route path=':userId' element={<UserDetails />} />
+        <Route path='admin' element={<Admin />} />
+      </Route>
+
       <Route path='*' element={<PageNotFound />} />
     </Route>
 
