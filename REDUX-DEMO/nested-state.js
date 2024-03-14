@@ -21,6 +21,7 @@ const initialState = {
         state: 'Karnataka'
     }
 }
+
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case STREET_UPDATED:
@@ -36,8 +37,7 @@ const reducer = (state = initialState, action) => {
             })
         default: {
             return state
-        }
-            
+        }            
     }
 }
 

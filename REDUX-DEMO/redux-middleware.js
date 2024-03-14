@@ -3,23 +3,24 @@ const createStore = redux.createStore
 const bindActionCreators = redux.bindActionCreators
 const combineReducers = redux.combineReducers
 const applyMiddleware = redux.applyMiddleware
+const reduxThunk = require('redux-thunk').default
 
-const reduxLogger = require('redux-logger')
-const logger = reduxLogger.createLogger()
+const reduxLogger = require('redux-logger').createLogger()
+// const logger = reduxLogger.createLogger()
 
-
+console.log(reduxThunk)
 
 const CAKE_ORDERED = 'CAKE_ORDERED'
 const ICECREAM_ORDERED = 'ICECREAM_ORDERED'
 
-function cakeOrder(qty = 2) {
+function cakeOrder(qty) {
     return {
         type: CAKE_ORDERED,
         payload: qty
     }
 }
 
-function iceCreamOrder(qty = 1) {
+function iceCreamOrder(qty) {
     return {
         type: ICECREAM_ORDERED,
         payload: qty
@@ -63,11 +64,12 @@ const rootReducer = combineReducers({
     iceCream: reducerIceCream
 })
 
-const store = createStore(rootReducer, applyMiddleware(logger))
+const store = createStore(rootReducer, applyMiddleware(reduxLogger))
 console.log('Initial State: ', store.getState())
 
-const unsubscribe =  store.subscribe(() => {} )
+const unsubscribe =  store.subscribe(() => {})
 const actions = bindActionCreators({cakeOrder, iceCreamOrder}, store.dispatch)
+
 actions.cakeOrder(2)
 actions.cakeOrder(1)
 actions.cakeOrder(1)
