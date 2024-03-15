@@ -7,13 +7,18 @@ const initialState = {
 const iceCreamSlice = createSlice({
     name: 'iceCream',
     initialState,
-    reducers:{
+    reducers: {
         ordered: (state) => {
             state.nubmerOfIceCreams--
         },
         restocked: (state, action) => {
             state.nubmerOfIceCreams += action.payload
         }
+    },
+    extraReducers: (builder) => {
+        builder.addCase('cake/ordered', (state) => {
+            state.nubmerOfIceCreams--
+        })
     }
 })
 
