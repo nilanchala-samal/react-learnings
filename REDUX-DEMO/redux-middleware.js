@@ -3,12 +3,9 @@ const createStore = redux.createStore
 const bindActionCreators = redux.bindActionCreators
 const combineReducers = redux.combineReducers
 const applyMiddleware = redux.applyMiddleware
-const reduxThunk = require('redux-thunk').default
 
 const reduxLogger = require('redux-logger').createLogger()
 // const logger = reduxLogger.createLogger()
-
-console.log(reduxThunk)
 
 const CAKE_ORDERED = 'CAKE_ORDERED'
 const ICECREAM_ORDERED = 'ICECREAM_ORDERED'
